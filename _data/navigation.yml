@@ -3,15 +3,25 @@
   children:
     - title: Introduction
       url: /quickstart/introduction/
-    - title: Introduction2
-      url: /quickstart/introduction2/
+    - title: Setup
+      url: /quickstart/setup/
 - title: API Documentation
   url: /api/
   children:
-    - title: API Documentation1
-      url: /api/api1/
-    - title: API Documentation1
-      url: /api/api2/
+    - title: Authentication
+      url: /api/authentication/
+      children:
+        - title: OAuth
+          url: /api/authentication/oauth/
+        - title: API Keys
+          url: /api/authentication/api-keys/
+    - title: Endpoints
+      url: /api/endpoints/
+      children:
+        - title: Users
+          url: /api/endpoints/users/
+        - title: Orders
+          url: /api/endpoints/orders/
 - title: Appendix
   url: /appendix/
   children:

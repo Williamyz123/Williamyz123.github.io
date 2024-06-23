@@ -9,22 +9,9 @@
 <body>
 <div class="container">
   <nav class="sidebar">
-    {% assign nav_items = site.data.navigation %}
     <ul>
-      {% for item in nav_items %}
-      <li>
-        <span>{{ item.title }}</span>
-        {% if item.children %}
-        <ul>
-          {% for child in item.children %}
-          <li>
-            <a href="{{ child.url | relative_url }}">{{ child.title }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-      </li>
-      {% endfor %}
+      {% assign nav_items = site.data.navigation %}
+      {% include navigation.html items=nav_items %}
     </ul>
   </nav>
   <main class="content">
