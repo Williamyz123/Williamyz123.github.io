@@ -35,3 +35,4 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 # 新增的
 gem 'webrick'
 gem 'csv'
+gem 'jekyll-toc'

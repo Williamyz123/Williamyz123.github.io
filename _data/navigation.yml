@@ -1,0 +1,21 @@
+- title: Quickstart
+  url: /quickstart/
+  children:
+    - title: Introduction
+      url: /quickstart/introduction/
+    - title: Introduction2
+      url: /quickstart/introduction2/
+- title: API Documentation
+  url: /api/
+  children:
+    - title: API Documentation1
+      url: /api/api1/
+    - title: API Documentation1
+      url: /api/api2/
+- title: Appendix
+  url: /appendix/
+  children:
+    - title: Glossary
+      url: /appendix/glossary/
+    - title: FAQ
+      url: /appendix/faq/

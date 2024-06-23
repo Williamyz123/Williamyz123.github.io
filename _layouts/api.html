@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+</head>
+<body>
+<div class="container">
+  <nav class="sidebar">
+    {% assign nav_items = site.data.navigation %}
+    <ul>
+      {% for item in nav_items %}
+      <li>
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        {% if item.children %}
+        <ul>
+          {% for child in item.children %}
+          <li>
+            <a href="{{ child.url | relative_url }}">{{ child.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <main class="content">
+    {{ content }}
+  </main>
+</div>
+</body>
+</html>

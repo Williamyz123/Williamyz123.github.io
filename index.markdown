@@ -1,9 +1,16 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+title: API Documentation
+layout: api
 ---
-# 这是一级标题
-## 这二级
-123话费adf
+
+# API Documentation
+
+Welcome to the API documentation.
+
+## Section 1
+
+Details about section 1.
+
+## Section 2
+
+Details about section 2.
