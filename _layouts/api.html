@@ -13,7 +13,7 @@
     <ul>
       {% for item in nav_items %}
       <li>
-        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        <span>{{ item.title }}</span>
         {% if item.children %}
         <ul>
           {% for child in item.children %}
