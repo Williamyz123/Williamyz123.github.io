@@ -1,10 +1,12 @@
 - title: Quickstart
   url: /quickstart/
   children:
-    - title: Introduction
-      url: /quickstart/introduction/
-    - title: Setup
-      url: /quickstart/setup/
+    - title: "Step 1: Generate your API key"
+      url: /quickstart/step1/
+    - title: "Step 1: Generate your API key"
+      url: /quickstart/step1/
+    - title: "Step 1: Generate your API key"
+      url: /quickstart/step1/
 - title: API Documentation
   url: /api/
   children:
