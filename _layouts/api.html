@@ -4,19 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-<div class="container">
-  <nav class="sidebar">
-    <ul>
-      {% assign nav_items = site.data.navigation %}
-      {% include navigation.html items=nav_items %}
+<div id="container">
+  <nav id="sidebar">
+    <ul id="nav">
+      <!-- JavaScript will populate this -->
     </ul>
   </nav>
-  <main class="content">
+  <div id="content">
     {{ content }}
-  </main>
+  </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const content = document.getElementById("content");
+    const headings = content.querySelectorAll("h1, h2, h3, h4, h5, h6");
+    const nav = document.getElementById("nav");
+
+    headings.forEach(heading => {
+      const link = document.createElement("a");
+      const listItem = document.createElement("li");
+
+      const id = heading.innerText.toLowerCase().replace(/\s+/g, '-');
+      heading.id = id;
+
+      link.href = `#${id}`;
+      link.innerText = heading.innerText;
+      link.style.marginLeft = `${(parseInt(heading.tagName.substring(1)) - 1) * 20}px`;
+
+      listItem.appendChild(link);
+      nav.appendChild(listItem);
+    });
+  });
+</script>
 </body>
 </html>
