@@ -2,6 +2,9 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* 引入 Rouge 默认样式 */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/rouge/3.26.0/rouge.min.css');
+
 #container {
     display: flex;
 }
@@ -43,4 +46,18 @@ pre {
     background-color: #f4f4f4;
     padding: 15px;
     border: 1px solid #ddd;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* 使边框合并为一个 */
+}
+
+table, th, td {
+    border: 1px solid black; /* 添加边框 */
+}
+
+th, td {
+    padding: 8px; /* 单元格内边距 */
+    text-align: left; /* 文本对齐方式 */
 }

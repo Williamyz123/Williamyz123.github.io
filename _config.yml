@@ -29,6 +29,9 @@ url: "https://williamyz123.github.io/" # the base hostname & protocol for your s
 twitter_username: jekyllrb
 github_username:  jekyll
 
+markdown: kramdown
+highlighter: pygments
+
 # Build settings
 theme: minima
 plugins:
