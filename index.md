@@ -6,7 +6,9 @@ nav: true
 
 # Quickstart
 
+
 ## Step 1: Generate your API key
+
 
 1. Navigate to your **Workspace-Account-API Key**
 

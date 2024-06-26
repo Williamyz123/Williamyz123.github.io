@@ -32,17 +32,20 @@ github_username:  jekyll
 markdown: kramdown
 highlighter: pygments
 
+kramdown:
+  input: GFM
+  hard_wrap: false
+
 # Build settings
-theme: minima
+# theme: architect
+remote_theme: pages-themes/architect@v0.2.0
 plugins:
   - jekyll-feed
   - jekyll-toc
+  - jekyll-remote-theme
 include:
   - "_pages"
   - "_posts"
-  - "quickstart"
-  - "api"
-  - "appendix"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
