@@ -107,8 +107,8 @@
       const id = heading.id || heading.innerText.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
       heading.id = id;
 
-      // Use relative path instead of `#`
-      link.href = `/${id}`;
+      // Use query parameter instead of `#`
+      link.href = `?id=${id}`;
       link.innerText = heading.innerText;
       link.style.marginLeft = `${(parseInt(heading.tagName.substring(1)) - 1) * 20}px`;
 
@@ -122,23 +122,26 @@
         links.forEach(link => link.classList.remove("nav-active"));
         link.classList.add("nav-active");
 
-        // Update URL using History API
-        history.pushState(null, null, `/${id}`);
+        // Update URL with query parameter
+        const newUrl = new URL(window.location);
+        newUrl.searchParams.set('id', id);
+        window.history.pushState(null, null, newUrl);
       });
 
       listItem.appendChild(link);
       nav.appendChild(listItem);
     });
 
-    // Handle initial URL with anchor ID
-    if (location.hash) {
-      const id = location.hash.substring(1);
+    // Handle initial URL with query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    if (id) {
       const targetElement = document.getElementById(id);
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: "smooth" });
 
         // Update active link
-        const activeLink = nav.querySelector(`a[href="/${id}"]`);
+        const activeLink = nav.querySelector(`a[href="?id=${id}"]`);
         if (activeLink) {
           const links = nav.querySelectorAll("a");
           links.forEach(link => link.classList.remove("nav-active"));
