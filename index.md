@@ -1,7 +1,6 @@
 ---
 layout: api
 title: Vizard API Documentation
-nav: true
 ---
 
 # Quickstart {#quickstart}
@@ -159,7 +158,7 @@ mp4, 3gp, avi, mov
 
 # Sample Code
 
-## Python
+## Python {#sample-code-python}
 
 ```python
 import requests

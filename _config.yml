@@ -29,17 +29,10 @@ url: "https://williamyz123.github.io/" # the base hostname & protocol for your s
 twitter_username: jekyllrb
 github_username:  jekyll
 
-markdown: kramdown
-highlighter: pygments
-
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-toc
-include:
-  - "_pages"
-  - "_posts"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
