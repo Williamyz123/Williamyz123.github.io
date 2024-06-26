@@ -78,6 +78,22 @@
     .nav-active {
       font-family: 'Vizard-Text-Bold';
     }
+
+    .code-block {
+      position: relative;
+    }
+
+    .copy-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      background-color: #43249f;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
@@ -149,6 +165,30 @@
         }
       }
     }
+
+    // Add copy button functionality
+    const codeBlocks = document.querySelectorAll("pre");
+
+    codeBlocks.forEach(codeBlock => {
+      const copyButton = document.createElement("button");
+      copyButton.className = "copy-button";
+      copyButton.innerText = "Copy";
+      copyButton.addEventListener("click", function() {
+        const textArea = document.createElement("textarea");
+        textArea.value = codeBlock.textContent;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+        copyButton.innerText = "Copied!";
+        setTimeout(function() {
+          copyButton.innerText = "Copy";
+        }, 2000);
+      });
+
+      codeBlock.parentElement.classList.add("code-block");
+      codeBlock.parentElement.appendChild(copyButton);
+    });
   });
 </script>
 </body>

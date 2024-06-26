@@ -22,7 +22,7 @@ nav: true
 
 **URL**
 
-```angular2html
+```python
 https://elb-api.vizard.ai/hvizard-server-front/open-api/v1/project/create
 ```
 
@@ -66,7 +66,7 @@ https://elb-api.vizard.ai/hvizard-server-front/open-api/v1/project/create
 
 **URL**
 
-```angular2html
+```python
 https://elb-api.vizard.ai/hvizard-server-front/open-api/v1/project/query/{projectId}
 ```
 
