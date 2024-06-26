@@ -26,6 +26,15 @@
     .nav-active {
       font-family: 'Vizard-Text-Bold';
     }
+
+    #nav a {
+      text-decoration: none;
+      color: white;
+    }
+
+    #nav a:hover {
+      font-family:'Vizard-Text-Bold';
+    }
   </style>
 </head>
 <body>
@@ -81,12 +90,10 @@
       const links = nav.querySelectorAll("a");
       links.forEach(link => {
         link.classList.remove("nav-active");
-        link.style.fontFamily = "Vizard-Text";
       });
 
       const clickedLink = event.target;
       clickedLink.classList.add("nav-active");
-      clickedLink.style.fontFamily = "Vizard-Text-Bold";
     });
   });
 </script>
