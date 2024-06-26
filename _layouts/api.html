@@ -26,11 +26,10 @@
     }
 
     table {
-      width: 100%;
       border-collapse: collapse;
       border-radius: 10px; /* 设置表格圆角 */
       overflow: hidden; /* 有背景颜色就要用这个 */
-      background-color: #FBFBFB; /* 背景颜色 */
+      background-color: #f4f4f4; /* 背景颜色 */
       outline: 1px solid #DFDFDF; /* 使用 outline 设置表格外部边框 */
     }
     table, th, td {
@@ -39,6 +38,8 @@
     th, td {
       padding: 8px;
       text-align: left;
+      max-width: calc(50ch + 20px); /* 设置最大宽度为50个英文单词长度 */
+      word-wrap: break-word; /* 超出长度自动换行 */
     }
 
     pre {
@@ -57,13 +58,11 @@
       height: 100vh;
       overflow-y: auto;
       position: fixed;
-
     }
     #nav {
       list-style-type: none;
       padding: 0;
       color: white;
-
     }
     #nav li {
       margin: 10px 0;
