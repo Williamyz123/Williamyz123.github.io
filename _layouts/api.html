@@ -17,8 +17,9 @@
     }
 
     #content ol {
-      list-style-position: inside; /* 使标记在列表项的内部显示 */
+      list-style-position: inside;
     }
+
     #content {
       margin-left: 320px;
       padding: 15px;
@@ -27,10 +28,10 @@
 
     table {
       border-collapse: collapse;
-      border-radius: 10px; /* 设置表格圆角 */
-      overflow: hidden; /* 有背景颜色就要用这个 */
-      background-color: #f4f4f4; /* 背景颜色 */
-      outline: 1px solid #DFDFDF; /* 使用 outline 设置表格外部边框 */
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #f4f4f4;
+      outline: 1px solid #DFDFDF;
     }
     table, th, td {
       border: 1px solid #DFDFDF;
@@ -38,8 +39,8 @@
     th, td {
       padding: 8px;
       text-align: left;
-      max-width: calc(50ch + 20px); /* 设置最大宽度为50个英文单词长度 */
-      word-wrap: break-word; /* 超出长度自动换行 */
+      max-width: calc(50ch + 20px);
+      word-wrap: break-word;
     }
 
     pre {
@@ -47,13 +48,12 @@
       padding: 15px;
       border: 1px solid #ddd;
       border-radius: 0.5rem;
-      overflow: hidden !important; /* 防止边框影响 */
+      overflow: hidden !important;
     }
 
     #sidebar {
       width: 270px;
       background-image: url("https://cdn-docs.vizard.ai/0-web-static/image/home/first_model_background.webp");
-      /*background-color: #4822A5;*/
       padding: 15px;
       height: 100vh;
       overflow-y: auto;
@@ -107,7 +107,8 @@
       const id = heading.id || heading.innerText.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
       heading.id = id;
 
-      link.href = `#${id}`;
+      // Use relative path instead of `#`
+      link.href = `/${id}`;
       link.innerText = heading.innerText;
       link.style.marginLeft = `${(parseInt(heading.tagName.substring(1)) - 1) * 20}px`;
 
@@ -120,11 +121,31 @@
         const links = nav.querySelectorAll("a");
         links.forEach(link => link.classList.remove("nav-active"));
         link.classList.add("nav-active");
+
+        // Update URL using History API
+        history.pushState(null, null, `/${id}`);
       });
 
       listItem.appendChild(link);
       nav.appendChild(listItem);
     });
+
+    // Handle initial URL with anchor ID
+    if (location.hash) {
+      const id = location.hash.substring(1);
+      const targetElement = document.getElementById(id);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+
+        // Update active link
+        const activeLink = nav.querySelector(`a[href="/${id}"]`);
+        if (activeLink) {
+          const links = nav.querySelectorAll("a");
+          links.forEach(link => link.classList.remove("nav-active"));
+          activeLink.classList.add("nav-active");
+        }
+      }
+    }
   });
 </script>
 </body>
