@@ -47,6 +47,7 @@
 body {
     font-family:'Vizard-Text';
 }
+
 p {
     margin-bottom: 1rem; /* 添加段落底部的间距 */
 }
@@ -63,71 +64,10 @@ h3 {
     margin-bottom: 1rem;
 }
 
-pre {
+table {
     margin-bottom: 1rem;
 }
 
-#container {
-    display: flex;
-}
-
-#sidebar {
-    width: 270px;
-    background-image: url("https://cdn-docs.vizard.ai/0-web-static/image/home/first_model_background.webp");
-    /*background-color: #4822A5;*/
-    padding: 15px;
-    height: 100vh;
-    overflow-y: auto;
-    position: fixed;
-
-}
-
-#nav {
-    list-style-type: none;
-    padding: 0;
-    color: white;
-
-}
-
-#nav li {
-    margin: 10px 0;
-}
-
-#content ol {
-    list-style-position: inside; /* 使标记在列表项的内部显示 */
-}
-
-#content {
-    margin-left: 320px;
-    padding: 15px;
-    width: calc(100% - 320px);
-}
-
-#nav a {
-    text-decoration: none;
-    color: white;
-}
-
-#nav a:hover {
-    font-family:'Vizard-Text-Bold';
-}
-
 pre {
-    background-color: #f4f4f4;
-    padding: 15px;
-    border: 1px solid #ddd;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse; /* 使边框合并为一个 */
-}
-
-table, th, td {
-    border: 1px solid black; /* 添加边框 */
-}
-
-th, td {
-    padding: 8px; /* 单元格内边距 */
-    text-align: left; /* 文本对齐方式 */
+    margin-bottom: 1rem;
 }
