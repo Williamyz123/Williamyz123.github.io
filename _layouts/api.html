@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
+  <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/pygents.css' | relative_url }}">
   <style>
@@ -12,17 +13,18 @@
     }
     table {
       width: 100%;
-      border-collapse: collapse; /* 使边框合并为一个 */
+      border-collapse: collapse;
       margin-bottom: 1rem;
     }
-
     table, th, td {
-      border: 1px solid black; /* 添加边框 */
+      border: 1px solid black;
     }
-
     th, td {
-      padding: 8px; /* 单元格内边距 */
-      text-align: left; /* 文本对齐方式 */
+      padding: 8px;
+      text-align: left;
+    }
+    .nav-active {
+      font-family: 'Vizard-Text-Bold';
     }
   </style>
 </head>
@@ -44,11 +46,26 @@
     const headings = content.querySelectorAll("h1, h2, h3, h4, h5, h6");
     const nav = document.getElementById("nav");
 
+    function generateId(text) {
+      // Ensure IDs are unique even if headings have the same text
+      let id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+      const existingIds = new Set();
+      headings.forEach(heading => {
+        existingIds.add(heading.id);
+      });
+      let suffix = 1;
+      while (existingIds.has(id)) {
+        id = `${text.toLowerCase().replace(/\s+/g, '-')}-${suffix}`;
+        suffix++;
+      }
+      return id;
+    }
+
     headings.forEach(heading => {
       const link = document.createElement("a");
       const listItem = document.createElement("li");
 
-      const id = heading.innerText.toLowerCase().replace(/\s+/g, '-');
+      const id = generateId(heading.innerText);
       heading.id = id;
 
       link.href = `#${id}`;
@@ -57,6 +74,19 @@
 
       listItem.appendChild(link);
       nav.appendChild(listItem);
+    });
+
+    // Add event listener for clicks on navigation items
+    nav.addEventListener("click", function(event) {
+      const links = nav.querySelectorAll("a");
+      links.forEach(link => {
+        link.classList.remove("nav-active");
+        link.style.fontFamily = "Vizard-Text";
+      });
+
+      const clickedLink = event.target;
+      clickedLink.classList.add("nav-active");
+      clickedLink.style.fontFamily = "Vizard-Text-Bold";
     });
   });
 </script>

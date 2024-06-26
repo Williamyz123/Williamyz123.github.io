@@ -1,6 +1,6 @@
 ---
 layout: api
-title: API Documentation
+title: Vizard API Documentation
 nav: true
 ---
 
