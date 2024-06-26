@@ -70,6 +70,7 @@
     #nav a {
       text-decoration: none;
       color: white;
+      cursor: pointer;
     }
     #nav a:hover {
       font-family:'Vizard-Text-Bold';
@@ -110,19 +111,19 @@
       link.innerText = heading.innerText;
       link.style.marginLeft = `${(parseInt(heading.tagName.substring(1)) - 1) * 20}px`;
 
-      listItem.appendChild(link);
-      nav.appendChild(listItem);
-    });
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+        const targetElement = document.getElementById(id);
+        targetElement.scrollIntoView({ behavior: "smooth" });
 
-    // Add event listener for clicks on navigation items
-    nav.addEventListener("click", function(event) {
-      const links = nav.querySelectorAll("a");
-      links.forEach(link => {
-        link.classList.remove("nav-active");
+        // Update active link
+        const links = nav.querySelectorAll("a");
+        links.forEach(link => link.classList.remove("nav-active"));
+        link.classList.add("nav-active");
       });
 
-      const clickedLink = event.target;
-      clickedLink.classList.add("nav-active");
+      listItem.appendChild(link);
+      nav.appendChild(listItem);
     });
   });
 </script>
