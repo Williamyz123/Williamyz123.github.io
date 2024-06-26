@@ -4,9 +4,9 @@ title: Vizard API Documentation
 nav: true
 ---
 
-# Quickstart
+# Quickstart {#quickstart}
 
-## Step 1: Generate your API key
+## Step 1: Generate your API key {#generate-api-key}
 
 1. Navigate to your **Workspace-Account-API Key**
 
@@ -16,9 +16,9 @@ nav: true
 
 **Important**: Treat your API key like a password. Keep it confidential and do not share it with anyone.
 
-## Step 2: Post a long video
+## Step 2: Post a long video {#post-a-long-video}
 
-### Request
+### Request {#post-a-long-video-request}
 
 **URL**
 
@@ -49,7 +49,7 @@ https://elb-api.vizard.ai/hvizard-server-front/open-api/v1/project/create
 | subtitleSwitch | int      | NO       | Subtitle switch. <br/> 0, off; <br/> 1, on; (default value)                                                                     |
 | headlineSwitch | int      | NO       | Headline switch. <br/> 0, off; <br/> 1, on; (default value)                                                                     |
 
-### Response
+### Response {#post-a-long-video-response}
 
 **Content-Type:** application/json
 
@@ -60,9 +60,9 @@ https://elb-api.vizard.ai/hvizard-server-front/open-api/v1/project/create
 | code         | int       | 2000: created succeeded; <br/>4001: invalid api key; <br/>4002: created failed; <br/>4003: requests exceeded the limit; <br/>4004: unsupported video format; <br/>4005: invalid video url; <br/>4006: illegal parameter; <br/>4007: insufficient remaining time in the account |
 | projectid    | string    | Used for polling short clips generation                                                                       |
 
-## Step 3: Polling short clips
+## Step 3: Polling short clips {#polling-short-clips}
 
-### Request
+### Request {#polling-short-clips-request}
 
 **URL**
 
@@ -84,7 +84,7 @@ https://elb-api.vizard.ai/hvizard-server-front/open-api/v1/project/query/{projec
 |-----------------|--------------------------|----------|-----|
 | projectId | Long      | YES      |  Get the video export result by projectId. <br/>Please append it to https request url, behind ’/query/’. |
 
-### Response
+### Response {#polling-short-clips-response}
 
 **Content-Type**: application/json
 
@@ -133,11 +133,11 @@ https://elb-api.vizard.ai/hvizard-server-front/open-api/v1/project/query/{projec
 | uk            | Ukrainian     |
 | vi            | Vietnamese    |
 
-## Supported file types
+## Supported file types 
 
 mp4, 3gp, avi, mov
 
-## Maximum video length
+## Maximum video length 
 
 2 hours
 

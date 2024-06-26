@@ -99,26 +99,11 @@
     const headings = content.querySelectorAll("h1, h2, h3, h4, h5, h6");
     const nav = document.getElementById("nav");
 
-    function generateId(text) {
-      // Ensure IDs are unique even if headings have the same text
-      let id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-      const existingIds = new Set();
-      headings.forEach(heading => {
-        existingIds.add(heading.id);
-      });
-      let suffix = 1;
-      while (existingIds.has(id)) {
-        id = `${text.toLowerCase().replace(/\s+/g, '-')}-${suffix}`;
-        suffix++;
-      }
-      return id;
-    }
-
     headings.forEach(heading => {
       const link = document.createElement("a");
       const listItem = document.createElement("li");
 
-      const id = generateId(heading.innerText);
+      const id = heading.id || heading.innerText.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
       heading.id = id;
 
       link.href = `#${id}`;
