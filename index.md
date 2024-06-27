@@ -1,8 +1,8 @@
 ---
 layout: api
-title: Vizard API Documentation
-description: 这里是页面的描述
-keywords: 关键字1, 关键字2, 关键字3
+title: Open API | Vizard.ai
+description: An AI-powered video generator and editor that turns one long video into 10+ clips instantly.
+keywords: open api, video editing, video editor, text-based editor, online screen record, screen recorder, webinar recording, interview recording, testimonial recording, conference recording, repurpose video, video repurposing, Typestudio alternative, Descript alternative, video subtitles, resize video, edit video by text
 ---
 
 # Quickstart {#quickstart}
