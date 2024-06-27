@@ -173,7 +173,7 @@ VIDEO_URL = "https://cdn-docs.vizard.ai/openapi/sample.mp4"
 VIDEO_FILE_EXT = "mp4"
 LANG = "en"
 PREFER_LENGTH = "[0]"
-SUBTITLE_SWITCH = 0
+SUBTITLE_SWITCH = 1
 HEADLINE_SWITCH = 1
 
 headers = {
