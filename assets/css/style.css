@@ -1,4 +1,3 @@
-/*导入字体*/
 @font-face {
     font-family:'Vizard-Text';
     src:url('https://bp-vizard-docs-prod.s3.us-west-1.amazonaws.com/fonts/page/MazzardH-Regular.otf');
@@ -49,7 +48,7 @@ body {
 }
 
 p {
-    margin-bottom: 1rem; /* 添加段落底部的间距 */
+    margin-bottom: 1rem;
 }
 
 h1 {
