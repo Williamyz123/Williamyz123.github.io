@@ -226,7 +226,7 @@ def query_videos(project_id):
            else:
                print(query_result)
                print("clipping error:")
-              if 'message' in query_result:
+               if 'message' in query_result:
                    print(query_result['message'])
                break
        else:
