@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta name="keywords" content="{{ page.keywords }}">
   <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/rouge.css' | relative_url }}">
@@ -163,6 +165,10 @@
           links.forEach(link => link.classList.remove("nav-active"));
           activeLink.classList.add("nav-active");
         }
+      } else {
+        // If the id does not exist, redirect to home and scroll to top
+        window.location.href = '/';
+        window.scrollTo(0, 0);
       }
     }
 
